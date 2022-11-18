@@ -15,18 +15,14 @@ export const App = () => {
       <ContactForm />
       <div>
         <h2>Contacts</h2>
-        {(() => {
-          if (contacts.length > 0) {
-            return (
-              <div>
-                <Filter />
-                <ContactList />
-              </div>
-            );
-          } else {
-            return 'Contact list is empty';
-          }
-        })()}
+        {contacts.length > 0 ? (
+          <div>
+            <Filter />
+            <ContactList />
+          </div>
+        ) : (
+          <div>Contacts list is empty</div>
+        )}
       </div>
     </Container>
   );
